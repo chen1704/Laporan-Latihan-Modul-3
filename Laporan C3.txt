@@ -25,3 +25,22 @@ Apabila thread 1 sudah dijalankan, maka nilai prime->start dan prime->end perlu
 diupdate. nilai prime->start menjadi prime->end+1 , kemudian nilai prime->end
 menjadi nilai awalnya ditambah dengan interval - 1.
 
+Nomor 3 :
+Pada soal nomor 3, kita diminta untuk membuat music player. Music player yang dibuat mempunyai fitur untuk
+
+    1. Menampilkan panduan
+    2.Menampilkan isi lagu yang terdapat pada direktori
+    3. Memainkan lagunya
+    4. Dapat di pause setelah t detik
+    5. Dapat diputar kembali setelah t detik
+    6. Dapat dihentikan setelah t detik
+
+Thread yang digunakan ada 5, yaitu thread untuk memainkan lagu, untuk mengepause lagu, untuk melanjutkan kembali lagu, untuk menghentikan lagu dan juga thread untuk menampilkan isi dari lagu pada direktori.
+
+1. Untuk menampilkan isi lagu yang terdapat di suatu direktori, maka menggunakan ls | grep mp3
+2. Untuk memainkan lagu menggunakan sintaks system([nama lagu])
+3. Untuk mengepause lagu menggunakan sintaks pkill -STOP,untuk membuat agar lagu dipause setelah berapa detik, maka perlu inputan untuk menyatakan angkanya (sebut saja t). maka akan dilakukan perulangan sampai dengan t. setiap perulangan berisi sleep(1) yaitu menunggu selama 1 menit. apabila perulangan sudah selesai dilakukan, barulah pkill -STOP dijalankan.
+4. Untuk continue lagu menggunakan sintaks pkill -CONT,untuk membuat agar lagu diputar kembali setelah berapa detik, maka perlu inputan untuk menyatakan angkanya (sebut saja t). maka akan dilakukan perulangan sampai dengan t. setiap perulangan berisi sleep(1) yaitu menunggu selama 1 menit. apabila perulangan sudah selesai dilakukan, barulah pkill -CONT dijalankan.
+5. Untuk stop lagu menggunakan sintaks pkill,untuk membuat agar lagu berhenti diputar setelah berapa detik, maka perlu inputan untuk menyatakan angkanya (sebut saja t). maka akan dilakukan perulangan sampai dengan t. setiap perulangan berisi sleep(1) yaitu menunggu selama 1 menit. apabila perulangan sudah selesai dilakukan, barulah pkill dijalankan.
+
+referensi tambahan : http://valdyputra.blogspot.co.id/2015/11/membuat-semacam-mp3-player-linux.html?m=1
